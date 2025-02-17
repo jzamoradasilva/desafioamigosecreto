@@ -1,5 +1,6 @@
 let ListaAmigo = [];
 const nombreInput = document.getElementById("amigo");
+const amigosListados = document.getElementById("listaAmigos");
 
 document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', function(event) {
@@ -9,7 +10,17 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-  
+
+function mostrarAmigos(){
+    amigosListados.innerHTML = '';
+    ListaAmigo.forEach((amigo) => {
+        let item = document.createElement('li');
+        item.textContent = amigo;
+        amigosListados.appendChild(item);
+    });
+}
+
+
 
 function agregarAmigo (){
     let nombre = nombreInput.value.trim();
@@ -18,8 +29,9 @@ if(nombre == ''){
 
 }else{
     ListaAmigo.push(nombre);
-    console.log(ListaAmigo);
     nombreInput.value = '';
+    console.log(ListaAmigo);
+    mostrarAmigos();
 }
 
 }
