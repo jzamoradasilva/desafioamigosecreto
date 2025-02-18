@@ -19,7 +19,6 @@ function mostrarAmigos() {
         item.textContent = amigo;
         amigosListados.appendChild(item);
     });
-    console.log(ListaAmigo[2])
 }
 
 
